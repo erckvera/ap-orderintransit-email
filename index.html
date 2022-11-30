@@ -1,0 +1,883 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional/EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+    
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        body {
+            margin: 0;
+            background-color: #cccccc;
+        }
+
+        h1 {
+            font-weight: 600;
+        }
+
+        table {
+            border-spacing: 0;
+        }
+        td {
+            padding: 0;
+        }
+        img {
+            border: 0;
+        }
+        .wrapper {
+            width: 100%;
+            table-layout: fixed;
+            background-color: #cccccc;
+            padding-bottom: 60px;
+        }
+
+        .main {
+            background-color: #ffffff;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 600px;
+            border-spacing: 0;
+            font-family: sans-serif;
+            color: #1B306C;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .logo img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 150px;
+            padding-top: 20px;
+        }
+
+        .title {
+            font-family: 'Lexend', sans-serif;
+            text-align: center;
+            font-size: 10px;
+            border-bottom: 1px solid #1B306C;
+            padding-top: 20px;
+        }
+
+        .opening-img-row td {
+            padding-top: 20px;
+        }
+
+        .opening-img-row img {
+            max-width: 100%;
+        }
+
+        .help {
+            border-top: 1px solid #1B306C;
+        }
+
+        .help h4 {
+            font-family: 'Lexend', sans-serif;
+            font-size: 16px;
+            line-height: 8px;
+        }
+
+        .help td {
+            padding-top: 20px;
+        }
+
+        .intro {
+            padding-bottom: 20px;
+        }
+
+        .intro p {
+            line-height: 32px;
+            font-size: 12px;
+        }
+
+        .details-heading th {
+            text-align: left;
+            font-size: 12px;
+        }
+
+        .order-details td{
+            font-size: 12px;
+            padding-bottom: 20px;
+        }
+
+        .horizontal-stages {
+            border-collapse: separate;
+            border-spacing: 10px;
+        }
+
+        .horizontal-stages p {
+            font-size: 14px;
+        }
+
+        .order-stage td {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .enabled {
+            background-color: #E6F1FD;
+            border-radius: 10px;
+        }
+
+        .pending {
+            border: 3px dashed #E6F1FD;
+            border-radius: 10px;
+        }
+
+        .pending p {
+            color: #BEC2CC;
+        }
+
+        .pending-text {
+            color: #BEC2CC;
+        }
+
+        .pending-img {
+            opacity: 0.3;
+        }
+
+        .stage-text {
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+
+        .order-icon {
+            width: 55px;
+        }
+
+        .enabled-icon {
+            padding: 10px;
+        }
+
+        .disabled-icon {
+            padding: 7px;
+        }
+
+        .parcelpickup-icon {
+            width: 85px;
+        }
+
+        .intransit-icon {
+            width: 65px;
+        }
+        
+        .stage-description{
+            text-align: left;
+        }
+
+        .order-stage-row {
+            padding-top: 10px;
+        }
+
+        .btn {
+            border-radius: 6px;
+            color: #1B306C;
+            font-family: 'Lexend', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+        }
+
+        .duplicate-btn {
+            background-color: #E6F1FD;
+            cursor: pointer;
+        }
+
+        .duplicate-btn:hover {
+            background-color: #CDE5FF;
+        }
+
+        .track-btn {
+            border: 1px solid #DAE3EC;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .track-btn:hover {
+            border: 1px solid #0043FF;
+        }
+
+        .create-btn {
+            background-color: #0043FF;
+            color: white;
+            cursor: pointer;
+        }
+
+        .create-btn:hover{
+            background-color: #1773FF
+        }
+
+        .cta-row {
+            padding-top: 35px;
+            text-align: center;
+        }
+
+        .td-duplicate-btn {
+            padding-right: 10px;
+        }
+
+        .td-track-btn {
+            padding-right: 10px;
+        }
+
+        .order-dt-cell {
+            padding-top: 45px;
+        }
+
+        .order-dt-cell-2 {
+            padding-top: 25px;
+        }
+
+        .order-dt-table {
+            border: 1px solid #E5E7EB;
+            box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .order-dt-table h3 {
+            letter-spacing: 0.14em;
+            color: #1B306C;
+            font-size: 14px;
+            margin: 0px;
+        }
+
+        .order-dt-heading {
+            text-align: center;
+            background-color: #E5E7EB;
+            border-radius: 10px 10px 0px 0px;
+        }
+
+        .order-dt-table tbody td {
+            padding-left: 20px;
+            font-size: 14px;
+            border-bottom: 1px solid #E5E7EB;
+            color: #7E859A;
+        }
+
+        .last-cell {
+            border-bottom: none !important;
+        }
+
+        .order-dt-table tbody td b {
+            font-family: 'Lexend', sans-serif;
+            font-weight: 600;
+            color: #1B306C;
+        }
+
+        .summary-table tbody tr {
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .summary-table tbody td {
+            padding-left: 20px;
+            padding-right: 30px;
+            font-size: 16px;
+            border-bottom: 1px solid #E5E7EB;
+            color: #7E859A;
+            text-align: right;
+        }
+
+        .summary-label {
+            color:#1B306C !important;
+            text-align: left !important;
+        }
+
+        .recommendations {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .recommendations img {
+            width: 180px;
+            padding-right: 40px;
+        }
+
+        .recommendations .side-text thead p b{
+            font-family: 'Lexend', sans-serif;
+            font-size: 20px;
+        }
+
+        .recommendations .side-text tbody p {
+            line-height: 18px;
+            font-size: 12px;
+        }
+
+        .disclaimer p {
+            font-size: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <center class="wrapper">
+    <table class="main" width="100%">
+
+        <tr>
+            <td colspan="4" class="logo">
+                <a href="https://www.airpals.co/">
+                    <img src="https://i.ibb.co/QPnSVvq/Logo-Airpals-Horizontal-small.png" alt="Airpals logo" width="180" title="Airpals Logo">
+                </a>  
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="4" class="title">
+                <h1>Your order #1479 is on its way!</h1>
+            </td>
+        </tr>
+
+        <tr class="opening-img-row">
+            <td colspan="4">
+                <a href="https://www.airpals.co/">
+                    <img src="https://i.ibb.co/5KgqFT5/boxes-falling.png" alt="boxes falling from the sky">
+                </a>
+            </td>
+        </tr>
+
+        <tr height="150">
+            <td colspan="4" class="intro">
+                <p>
+                    Hello again, Erick Vera Bustamante,
+                    <br>
+                    Your order has been confirmed and one of our airpals is coming to pick up your parcel. Please follow the recommendations at the end of this email.
+                </p>
+            </td>
+        </tr>
+
+        <tr class="details-heading">
+            <th>
+                <b>Billed To</b>
+            </th>
+            <th>
+                <b>Order ID</b>
+            </th>
+            <th>
+                <b>Delivery date</b>
+            </th>
+            <th>
+                <b>Invoice date</b>
+            </th>
+        </tr>
+        <tr class="order-details">
+            <td>
+                <p>Erick Vera Bustamante</p>
+            </td>
+            <td>
+                <p>1479</p>
+            </td>
+            <td>
+                <p>August-30-2022</p>
+            </td>
+            <td>
+                <p>August-29-2022</p>
+            </td>
+        </tr>
+
+        <tr height="90">
+            <td colspan="4" class="order-stage-row">
+                <div class="order-stage enabled">
+                    <table width="100%">
+                        <tr>
+                            <td width="25%">
+                                <img src="https://i.ibb.co/dK1fBF6/checkmark.png" alt="check icon" class="order-icon">
+                            </td>
+                            <td width="60%">
+                                <span class="stage-description">
+                                    <p><b>Order confirmed</b></p>
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </td>
+        </tr>
+
+        <tr height="90">
+            <td colspan="4" class="order-stage-row">
+                <div class="order-stage pending">
+                    <table width="100%">
+                        <tr>
+                            <td width="25%">
+                                <img src="https://i.ibb.co/QpgmGMb/pending-stage-2.png" alt="pending stage icon" class="order-icon">
+                            </td>
+                            <td width="60%">
+                                <span class="stage-description">
+                                    <p><b>Your parcel has been picked up</b></p>
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+
+        <tr height="90">
+            <td colspan="4" class="order-stage-row">
+                <div class="order-stage pending">
+                    <table width="100%">
+                        <tr>
+                            <td width="25%">
+                                <img src="https://i.ibb.co/JCfszLy/pending-stage-3.png" alt="pending stage icon" class="order-icon">
+                            </td>
+                            <td width="60%">
+                                <span class="stage-description">
+                                    <p><b>In transit</b></p>
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </td>
+        </tr>
+
+        <tr height="90">
+            <td colspan="4" class="order-stage-row">
+                <div class="order-stage pending">
+                    <table width="100%">
+                        <tr>
+                            <td width="25%">
+                                <img src="https://i.ibb.co/SVq4mDB/pending-stage-4.png" alt="pending stage icon" class="order-icon">
+                            </td>
+                            <td width="60%">
+                                <span class="stage-description pending-text">
+                                    <p><b>We're arriving to the drop-off destination</b></p>
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+
+        <tr height="90">
+            <td colspan="4" class="order-stage-row">
+                <div class="order-stage pending">
+                    <table width="100%">
+                        <tr>
+                            <td width="25%">
+                                <img src="https://i.ibb.co/cv82NB2/pending-stage-5.png" alt="pending stage icon" class="order-icon">
+                            <td width="60%">
+                                <span class="stage-description pending-text">
+                                    <p><b>Order delivered</b></p>
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="4" height="42" class="cta-row">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td height="42" class="td-duplicate-btn">
+                                <a href="https://app.airpals.co">
+                                    <button class="btn duplicate-btn">
+                                        Duplicate Order
+                                    </button>
+                                </a>
+                            </td>
+                            <td height="42" width="33.33%" class="td-track-btn">
+                                <a href="https://app.airpals.co">
+                                    <button class="btn track-btn">
+                                        Track Order
+                                    </button>
+                                </a>
+                            </td>
+                            <td height="42" width="33.33%">
+                                <a href="https://app.airpals.co">
+                                    <button class="btn create-btn">
+                                        Create A New Order
+                                    </button>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="4" class="title">
+                <h1>Order Details</h1>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="4" class="order-dt-cell">
+                <table width="100%" class="order-dt-table">
+                    <thead>
+                        <tr height="38">
+                            <td colspan="2" class="order-dt-heading">
+                                <h3>
+                                    PICKUP
+                                </h3>
+                            </td>                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr height="38">
+                            <td>
+                                <b>Date</b>
+                            </td>
+                            <td>
+                                May 9, 2022
+                            </td>
+                        </tr>
+
+                        <tr height="38">
+                            <td>
+                                <b>Time</b>
+                            </td>
+                            <td>
+                                10:30 am - 11:30 am
+                            </td>
+                        </tr>
+
+                        <tr height="38">
+                            <td>
+                                <b>Address</b>
+                            </td>
+                            <td>
+                                108 Bayard Street, Brooklyn, NY, USA
+                            </td>
+                        </tr>
+
+                        <tr height="38">
+                            <td>
+                                <b>Recipient</b>
+                            </td>
+                            <td>
+                                John Doe
+                            </td>
+                        </tr>
+
+                        <tr height="38">
+                            <td>
+                                <b>Phone</b>
+                            </td>
+                            <td>
+                                56908908094
+                            </td>
+                        </tr>
+
+                        <tr height="38">
+                            <td class="last-cell">
+                                <b>Notes</b>
+                            </td>
+                            <td class="last-cell">
+                                Please ask for Jane at front desk
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="4" class="order-dt-cell-2">
+                <table width="100%" class="order-dt-table">
+                    <thead>
+                        <tr height="38">
+                            <td colspan="2" class="order-dt-heading">
+                                <h3>
+                                    DROP-OFF
+                                </h3>
+                            </td>                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr height="38">
+                            <td>
+                                <b>Date</b>
+                            </td>
+                            <td>
+                                May 9, 2022
+                            </td>
+                        </tr>
+
+                        <tr height="38">
+                            <td>
+                                <b>Time</b>
+                            </td>
+                            <td>
+                                10:30 am - 11:30 am
+                            </td>
+                        </tr>
+
+                        <tr height="38">
+                            <td>
+                                <b>Address</b>
+                            </td>
+                            <td>
+                                108 Bayard Street, Brooklyn, NY, USA
+                            </td>
+                        </tr>
+
+                        <tr height="38">
+                            <td>
+                                <b>Sender</b>
+                            </td>
+                            <td>
+                                John Doe
+                            </td>
+                        </tr>
+
+                        <tr height="38">
+                            <td>
+                                <b>Phone</b>
+                            </td>
+                            <td>
+                                56908908094
+                            </td>
+                        </tr>
+
+                        <tr height="38">
+                            <td class="last-cell">
+                                <b>Notes</b>
+                            </td>
+                            <td class="last-cell">
+                                Please ask for Jane at front desk
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="4" class="order-dt-cell-2">
+                <table width="100%" class="order-dt-table">
+                    <thead>
+                        <tr height="38">
+                            <td colspan="2" class="order-dt-heading">
+                                <h3>
+                                    PARCEL
+                                </h3>
+                            </td>                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr height="38">
+                            <td>
+                                <b>Sizes</b>
+                            </td>
+                            <td>
+                                1 Small, 2 Medium
+                            </td>
+                        </tr>
+
+                        <tr height="38">
+                            <td>
+                                <b>Value</b>
+                            </td>
+                            <td>
+                                $80
+                            </td>
+                        </tr>
+
+                        <tr height="38">
+                            <td class="last-cell">
+                                <b>Description</b>
+                            </td>
+                            <td class="last-cell">
+                                Small box with hair accesories, two pairs of shoes.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="4" class="order-dt-cell-2">
+                <table width="100%" class="order-dt-table">
+                    <thead>
+                        <tr height="38">
+                            <td colspan="2" class="order-dt-heading">
+                                <h3>
+                                    PAYMENT
+                                </h3>
+                            </td>                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr height="38">
+                            <td>
+                                <b>Card</b>
+                            </td>
+                            <td>
+                                Mastercard ••••4242
+                            </td>
+                        </tr>
+
+                        <tr height="38">
+                            <td>
+                                <b>Billed To</b>
+                            </td>
+                            <td>
+                                Erick Vera
+                            </td>
+                        </tr>
+
+                        <tr height="38">
+                            <td>
+                                <b>Billing Address</b>
+                            </td>
+                            <td>
+                                799 Jefferson Avenue, Brooklyn, NY, USA
+                                <br>
+                                Apt 5, Building F
+                            </td>
+                        </tr>
+
+                        <tr height="38">
+                            <td class="last-cell">
+                                <b>Promocode</b>
+                            </td>
+                            <td class="last-cell">
+                                AIRPALS20
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="4" class="order-dt-cell-2">
+                <table width="100%" class="summary-table">
+                    <tbody>
+                        <tr height="38">
+                            <td class="summary-label">
+                                Subtotal
+                            </td>
+                            <td>
+                                $ 34.64
+                            </td>
+                        </tr>
+
+                        <tr height="38">
+                            <td class="summary-label">
+                                Tip
+                            </td>
+                            <td>
+                                + $ 5.19
+                            </td>
+                        </tr>
+
+                        <tr height="38">
+                            <td class="summary-label">
+                                Discount
+                            </td>
+                            <td>
+                                - $ 6.93
+                            </td>
+                        </tr>
+
+                        <tr height="38">
+                            <td class="summary-label last-cell">
+                                <b>Total</b>
+                            </td>
+                            <td class="last-cell">
+                                <b>$ 32.90</b>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="4" height="40"></td>
+        </tr>
+
+        <tr>
+            <td colspan="4" class="help">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td height="30">
+                                <h4>Need assistance? We're here to help you</h4>
+                            </td>
+                            <td height="30" width="33.33%" class="td-track-btn">
+                                <a href="https://app.airpals.co">
+                                    <button class="btn track-btn">
+                                        Contact us
+                                    </button>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="4" class="recommendations">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href="https://www.airpals.co/">
+                                    <img src="https://i.ibb.co/TbsZFhQ/Boxed-person.png" alt="Person confused under a box">
+                                </a>
+                            </td>
+                            <td>
+                                <table width="100%" class="side-text">
+                                    <thead>
+                                        <tr>
+                                            <p><b>Help us avoid mistakes following this recommendations</b></p>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    Make sure your package is properly labeled so the recipient can easily find it at the drop-off destination.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    Sender, recipient, and any party involved should be expecting us. Please plan and communicate accordingly.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="4" class="disclaimer">
+                <p>
+                    All services rendered by Airpals Technologies Inc. are provided on a non-refundable and non-creditable basis. Please review our terms and conditions here. 
+                </p>
+            </td>
+        </tr>
+
+    </table>
+    </center>
+
+</body>
+
+
+</html>
